@@ -1,4 +1,7 @@
 ```sql
+/* SQL ********* SQL */
+CREATE DATABASE name;
+
 SELECT  /* select property , selects a column , when sitted to (*) it means all */
 FROM /* from a table name */
 
