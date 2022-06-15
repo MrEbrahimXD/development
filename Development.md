@@ -22,7 +22,13 @@ ON T1.id = T2.id;
 /* BASIC SYNTAX **** BASIC SYNTAX */
 SELECT * FROM love WHERE loved_people LIKE 'mo%' OR LIKE 'mu%' OR LIKE 'ma%';
 
-
+/* Variables *** Variables */
+VARCHAR p = "";
+INT s = 0;
+FLOAT x = 0.2;
+DOUBLE q = 0.00000000001;
+TEXT name = "";
+CHAR a = "A";
 
 
 ```
