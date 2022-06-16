@@ -119,9 +119,23 @@ CHAR a = "A";
   padding: calc(1.25rem+2px);
   !important /* overwrite anything with !important  to make it const*/
   /* Gradient Applied in CSS background property */
+  transparent /* color transparent */
+
   gradient-type(
   color1,
   color2
+  );
+  repeating-linear-gradient( /* Repeats the linear-gradient*/
+    var(--color1) 0%,
+    var(--color1) 10%,
+    var(--color2) 90%,
+    var(--color2) 100%
+  );
+  linear-gradient(
+    var(--color1) 0%,
+    var(--color1) 10%,
+    var(--color2) 90%,
+    var(--color2) 100%
   );
 }
 
@@ -266,7 +280,8 @@ background-color: rgb();
 background-color: #000000;
 background-color: hsl(0-360,0-100%,0-100%); 
 /* 0 to 360 for hue, a percentage from 0 to 100 for saturation, and a percentage from 0 to 100 for lightness. */
-background: linear-gradient(blue , red);
+background: linear-gradient(deg,blue , red);
+background : repeating-linear-gradient();
 
 /* Progress till 2022/5/26 All basic CSS has been finished */
 
@@ -403,7 +418,6 @@ html{
   box-sizing: border-box; /* border-box box-sizing : means box will have the same width and height no mater padding or margin or border i put */
   
 }
-
 
 ```
 
