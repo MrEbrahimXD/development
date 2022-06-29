@@ -62,7 +62,7 @@ CHAR a = "A";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--viewport for scaling-->
     <meta name="description" content="Good webpage xd" /> <!--Page description-->
     <link rel="stylesheet" href="styles.css" type="styles.css" /> <!-- Linking our css file for designing-->
-    <script href="script.js"></script> <!-- Linking our javascript file -->
+    <script src="script.js"></script> <!-- Linking our javascript file -->
   </head>
 
   <body> <!-- body element is responsible of showing stuff in your webpage-->
