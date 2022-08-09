@@ -32,6 +32,8 @@ DOUBLE q = 0.00000000001;
 TEXT name = "";
 CHAR a = "A";
 
+
+
 ```
 
 ```html
@@ -50,7 +52,6 @@ CHAR a = "A";
 
 </html> <!-- Closing tag of the html element -->
 
-
 ```
 
 ```html
@@ -62,7 +63,7 @@ CHAR a = "A";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--viewport for scaling-->
     <meta name="description" content="Good webpage xd" /> <!--Page description-->
     <link rel="stylesheet" href="styles.css" type="styles.css" /> <!-- Linking our css file for designing-->
-    <script src="script.js"></script> <!-- Linking our javascript file -->
+    <script href="script.js"></script> <!-- Linking our javascript file -->
   </head>
 
   <body> <!-- body element is responsible of showing stuff in your webpage-->
@@ -229,13 +230,15 @@ CHAR a = "A";
 
 ```HTML
   <!-- HTML Famous attributes ***************** HTML Famous attributes -->
-  <i dir="ltr-rtl" title="" loading="lazy" target="_blank" lang="" role="" cols="" rows="" href="" rel="stylesheet-Referer-noreferrer" type="" content="" value="" name="" id="" class="" aria-hidden="true-false" colspan="" rowspan="" width="" height="" border="1" style=""><i>
+  <i dir="ltr-rtl" title="" loading="lazy" target="_blank" lang="" role="" cols="" rows="" href="" rel="stylesheet-Referer-noreferrer" type="" content="" value="" name="" id="" class="" aria-hidden="true-false" colspan="" rowspan="" width="" height="" border="1" style="" cite=""><i>
 ```
 
 ```css
 /* CSS FUNCTIONS ********* CSS FUNCTIONS */
 .class{
-  padding: calc(1.25rem+2px);
+  calc(1.25rem+2px) /* calculate different units */
+  transform: skew(0deg , 44deg); /* skew it from the x , y axis */
+  repeat(times , value) /* repeat value for how many times */
   !important /* overwrite anything with !important  to make it const*/
   /* Gradient Applied in CSS background property */
   transparent /* color transparent */
@@ -259,7 +262,7 @@ CHAR a = "A";
   radial-gradient(
     circle closest-corner at 15% 15%,
     #ffcf33,
-    #ffcf33 20%,
+    #ffcf33 20%, 
     #ffff66 21%,
     #bbeeff 100%
   );
@@ -310,23 +313,29 @@ CHAR a = "A";
   
 }
 /* pseudo-selectors *********** pseudo-selector */
+p::first-letter{ } /* choose the first letter of the p element */
 a:visited{ } /* Anchor link , when it's visited */
 a:hover{ } /* Anchor Link , When you hover on it */
 a:active{ } /* Anchor Link , While clicking */
-a:not(.class); /* Anchors that aren't targeted by this .class class */
+a:not(#example){ } /* select all elements without the id #example */
+element[class~="something"] { color: red; } /* select all something class in element */
 /* pseudo-element ******************* pseudo-elements */
+:first-of-type{} /* targets the first element that matches the selector */
+:last-of-type{} /* targets the last element that matches the selcetor */
+:nth-of-type(number) /* targets the (number) that matches the selector */
 p::before{ content: "Text #"; } /* before the p put those content */
 p::after{content: "Text after lol";} /* after this p put those text */
- 
- 
+element is(a,p) {} /* element coontaining a , p 
+
  /* Hacks and stuff ******* Hacks and stuff */
  /* text and the background of a heading should be at least 4.5:1 */
- /* this is basically the same things */
+ 
+ /* Direct Ul Child */
  nav > ul > li{
 
 
  }
- 
+ /* Any Li in the nav */
  nav li{
 
 
@@ -358,6 +367,8 @@ background-color: hsl(0-360,0-100%,0-100%)
 /* Progress till 2022/5/26 */ All basic CSS has been finished */
 .style , .yea{
   text-align: center; /* to align the text to the center , or the left , or the right*/
+  text-align: jusitfy; /* to make the text look like a magazine */
+  text-decoration: none; /* to remove the decoration of the anchor link and text */
   background-color: rgb(0-255,0-255,0-255); /* to set a background color */
   background-image: url(https://google.com/); /* to set a background-img */ 
   opacity: 0-1; /* the transparent from 0 to 1 */
@@ -383,12 +394,7 @@ background-color: hsl(0-360,0-100%,0-100%)
   border-color: brown; /*  to change the border color */
   border-width: 20px; /* to change the border width */
 }
-/* pseudo-selectors *********** pseudo-selector */
-a:visited{ } /* Anchor link , when it's visited */
-a:hover{ } /* Anchor Link , When you hover on it */
-a:active{ } /* Anchor Link , While clicking */
-a:not(#example){ } /* select all elements without the id #example */
-element[class~="something"] { color: red; } /* select all something class in element */
+
 
 
 /* access key *********** access key */
@@ -438,6 +444,13 @@ background : repeating-linear-gradient(deg,color1,color2, ..);
 }
 .Additional_Colors{
   background: linear-gradient(gradientDirection, color1 {75%}, color2, ...);
+
+  background: repeating-linear-gradient(
+    {NUMBER}deg,
+    color 1 , 
+    color 2 ,
+    transparent
+  );
   /* it's so beauty , when it's 75% of the first color , transition to the next one */
   background: rgba() , hsla();
   /* RGB ALPHA = (r,g,b,opacity) hsla */
@@ -454,9 +467,6 @@ background : repeating-linear-gradient(deg,color1,color2, ..);
 /* Descriptive CSS ****************** Descriptive CSS */
 .class{
 
-    margin: 10px; /* all 4 values */
-    margin: 10px 10px; /* top and bottom , right and left */
-    margin: 10px 20px 10px; /* top , right and left , bottom */
     box-shadow: 10px 10px; /* horizontal offset , vertical offset */
     box-shadow: 10px 10px 20px; /* horizontal offset , vertical offset , blur*/
     box-shadow: 10px 10px 20px -10px; /* horizontal offset , vertical offset ,blur , spread = "how many pixel till start the blur"*/
@@ -508,17 +518,39 @@ background : repeating-linear-gradient(deg,color1,color2, ..);
   
   object-fit: cover - fit - contain; /* fixing the aspect ratio of all photos = cropping to fit*/
 
-
+  gap: ; /* gap between items , like margin but in flexbox */
 }
 ```
 
 ```css
 .css-grid{
   display: grid; /* To start a grid , this is applied for the parent */
+
   grid-template-columns: 1fr 95rem 1fr .. ; /* To create an X number of columns , parent property*/
 
+  row-gap: 3rem; /* space between rows , like margin but named gap */
+
+  grid-column: ;
+
+  grid-column-start: ;
+
+  grid-column-end: ;
+
+  grid-auto-flow: row - column ;
+
+  grid-auto-rows: ;
   
+  grid-auto-columns: ;
+
+  place-items: center;
+
+  justify-content: ;
   
+  justify-items: ;
+
+  align-items: ;
+
+  align-content: ;
 }
 ```
 
@@ -529,11 +561,12 @@ background : repeating-linear-gradient(deg,color1,color2, ..);
   font-size: 10px;
   font-family: 10px;
   font-weight: bold - 100 - 1200;
-  text-align: center; /* aligning the text to the center */
+  text-align: center - left - right; /* aligning the text to the center - left - right */
   letter-spacing: 0.15px; /* adjust space between each character of text */
   float: right or left; /* place an element on the left or right , with <span> actually*/
-  clear: right or left; /* clearing the float property */
+  clear: right or left; /* clearing the float property if you want something outside of the flow */
   overflow: hidden; /* to avoid overflow , easy lol*/
+  text-indent: -8px; /* indent text */
 }
 ```
 
@@ -544,14 +577,10 @@ background : repeating-linear-gradient(deg,color1,color2, ..);
   clip-path: inset(50%);
   -webkit-clip-path: inset(50%);
   white-space: nowrap;
-  gap: 1rem;
-  z-index: 0;
   border-collapse: collapse;
+  overflow: clip;
 }
-/* unknown pseudo selectors ******  unknown pseudo selectors */
-:first-of-type{} /* targets the first element that matches the selector */
-:last-of-type{} /* targets the last element that matches the selcetor */
-:nth-of-type(number) /* targets the (number) that matches the selector */
+
 
 ```css
 /* start any css file with ******** start any css file with */
@@ -661,4 +690,61 @@ html{
   
   
 }
+```
+```javascript
+// Writing Some Text
+window.alert("hi") // ALERT SOME TEXT TO THE BROWSER from WebAPI
+console.log("hi"); // log or write text into the console , From WebAPI
+
+// styling with %c 
+console.log("%cstyle %cme","font-size: large; color: blue" , "font-size: 1rem");
+
+// Create Variables
+let myVar = 1 // Let introduced at ES6 and it can be reasigned  
+const myVar2 = 2 // cannot be reassigned 
+var myVar3 = 3 // old but can be reassigned and re declared
+
+// Concatenating Varaibles
+console.log("Text" + myVar) // First method but old
+console.log(` Text ${myVar}`) // Newer Methods
+
+// Data Types in JS
+typeof("Hi") // string
+typeof(10 , 10.02) // number
+typeof(true , false) // boolean
+typeof(["names","ages","places"]) // array => object
+typeof(undefined) // object
+typeof(null) // object
+typeof({name: "hi"}) // object , also found in JSON or javascript object notation
+
+
+// Unary Operator ******* Converting Numbers , Boolean and Strings
+console.log(+"1") // logging 1 as a number
+console.log(-"1") // converting to number and making it a negative value
+console.log(+true + false) // true = 1 , false = 0 ; 1 + 0 = 1
+console.log(+"") // "" empty string = 0
+
+// Typing numbers in JS
+
+console.log(1000000) // it's a million but imagine someone can't read it **Double Precision
+console.log(1_000_000) // it's also a million but prettier **Syntactic Sugar**
+console.log(1e6) // also a million but (e, number of ZEROes) **e**
+console.log(10 ** 6) // a million , 10 of the power of 6
+console.log(1e6.0) // same value but it's a floating point
+
+// Convert String Numbers to Numbers
+Number("10") // A function that returns a number , here returns 10 as a number
+Number.MAX_VALUE // The max value JS can get to 
+Number.MAX_SAFE_INTEGER // max safe whole number that could not result in to error 
+
+
+// Number Methods 
+(10).toString() // convert numbers to string numbers
+10.5555.toFixed(var) // simplify the floating points to make it (var) numbers only + it does Fix the value to closest to 10 , Returns a String
+parseInt("10 huh?") // returns a number even if there's a string after it , NOT THAT SMART!
+parseFloat("10.21 LOL?") // returns a floating number even if there's a string after it , NOT THAT SMART !
+isInteger(100) // returns true if parameter was int if not returns false even if there is a string with int 
+isNaN(100) // If it's not NaN returns false , if it's a NaN returns true , EASY !
+
+
 ```
